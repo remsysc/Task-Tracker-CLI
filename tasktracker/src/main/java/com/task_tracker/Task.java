@@ -16,14 +16,44 @@ public class Task {
         this.id = nextId++;
         this.description = description;
         this.status = "Unknown";
-        LocalDateTime myObj = LocalDateTime.now();
-        this.createdAt = myObj.toString();
+        this.createdAt = LocalDateTime.now().toString();
         this.updatedAt = "Unknown";
+
+    }
+
+    Task(int id, String description, String status, String createdAt, String updatedAt) {
+        this.id = id;
+        this.description = description;
+        this.status = status;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
 
     }
 
     public int getId() {
         return this.id;
+    }
+
+    public static void setNextId(int nextId) {
+        Task.nextId = nextId;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    public String getCreatedAt() {
+
+        return this.createdAt;
+    }
+
+    public String getUpdatedAt() {
+
+        return this.updatedAt;
     }
 
     public void setDescription(String description) {
@@ -35,8 +65,7 @@ public class Task {
     }
 
     public void setUpdatedAt() {
-        LocalDateTime myObj = LocalDateTime.now();
-        this.updatedAt = myObj.toString();
+        this.updatedAt = LocalDateTime.now().toString();
     }
 
     public void displayInfo() {
