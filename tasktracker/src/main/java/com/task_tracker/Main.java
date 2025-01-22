@@ -4,7 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        TaskTracker.readJson();
+        // TaskTracker.readJson();
+        TaskTracker task = new TaskTracker();
 
         if (args.length < 2) {
             System.out.println("Please provide 2 arguments.");
@@ -19,12 +20,15 @@ public class Main {
 
         switch (args1) {
             case "add" ->
-                TaskTracker.add(args2);
+                task.add(args2);
             default ->
                 System.out.println("Invalid.");
         }
 
-        TaskTracker.printList();
-        TaskTracker.writeJson();
+        task.update(1, "Rem");
+        task.delete(1);
+        task.printList();
+
+        // TaskTracker.writeJson();
     }
 }
